@@ -7,7 +7,33 @@ socketio = SocketIO(app)
 # Define a route for the home page
 @app.route('/')
 def home():
-    return render_template('index.html')
+    cities = [
+        "Rome",
+        "Paris",
+        "Venice",
+        "Florence",
+        "Vienna",
+        "Prague",
+        "Dublin",
+        "Budapest",
+        "Krakow",
+        "Stockholm",
+        "Lisbon",
+        "Amsterdam",
+        "Madrid",
+        "Athens",
+        "Edinburgh",
+        "Copenhagen",
+        "Zurich",
+        "Oslo",
+        "Bergen",
+        "Seville",
+        "Helsinki",
+        "Dubrovnik"
+    ]
+
+    return render_template('index.html',cities=cities)
+
 
 
 
