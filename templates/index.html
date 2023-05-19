@@ -6,6 +6,27 @@
 </head>
 <body>
     <h1>Client</h1>
+    <label for="start_date">Start Date:</label>
+    <input type="date" id="start_date">
+    <br>
+    <label for="end_date">End Date:</label>
+    <input type="date" id="end_date">
+    <br>
+    <label for="city">City:</label>
+    <select id="city">
+        {% for city in cities %}
+        <option value="{{ city }}">{{ city }}</option>
+        {% endfor %}
+        <!-- Add more cities as options here -->
+    </select>
+    <br>
+    <label for="travel_type">Travel Type:</label>
+    <select id="travel_type">
+        <option value="all inclusive">All inclusive</option>
+        <option value="semi inclusive">Semi inclusive</option>
+        <option value='only "transport and hotel\"'>Only transport and hotel</option>
+    </select>
+    <br>
     <button id="get_quotation">Get Quotation</button>
     <div id="quotation_price"></div>
 
@@ -13,7 +34,7 @@
         var socket = io.connect('http://localhost:5002');
 
         // Listen for a response from the broker with the price of the quotation
-        socket.on('update_price', function(data) {
+        socket.on('update_plan', function(data) {
             var price_div = document.getElementById('quotation_price');
             console.log(data)
             // Update the quotation price on the page
@@ -22,9 +43,19 @@
 
         // Send a request to the broker for a quotation from the Auldfella's Quotation Service
         document.getElementById('get_quotation').onclick = function() {
-            console.log("click the button")
-            socket.emit('get_quotation');
-            console.log("emit the event")
+            var start_date = document.getElementById('start_date').value;
+            var end_date = document.getElementById('end_date').value;
+            var city = document.getElementById('city').value;
+            var travel_type = document.getElementById('travel_type').value;
+
+            var data = {
+                'start_date': start_date,
+                'end_date': end_date,
+                'city': city,
+                'travel_type': travel_type
+            };
+
+            socket.emit('get_input',data);
         };
     </script>
 </body>
