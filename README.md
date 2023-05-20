@@ -21,10 +21,31 @@ pip install -r requirements.txt
 
 ### Usage
 
-```sh
-python  
-```
-
+* Start service 1 Booking
+    ```sh
+    python Service_Booking/app.py  
+    ```
+* Start service 2 Kiwi
+    ```sh
+    python Service_Kiwi/app.py  
+    ```
+* Start service 3 Skyscanner
+    ```sh
+    python Service_Skyscanner/app.py  
+    ```
+* Start service 4 Trip
+    ```sh
+    python Service_Trip/app.py  
+    ```
+* Start broker
+    ```sh
+    python broker/app.py
+    ```
+* Start client
+    ```sh
+    python app.py
+    ```
+Visit http://127.0.0.1:5000 for the website.
 
 
 ## Contact
