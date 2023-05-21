@@ -32,6 +32,7 @@
     <div id="kiwi_price"></div>
     <div id="skyscanner_price"></div>
     <div id="booking_price"></div>
+    <div id="trip_price"></div>
 
     <script>
         var socket = io.connect('http://localhost:5005');
@@ -62,6 +63,13 @@
             console.log(data)
             // Update the quotation price on the page
             price_div.innerHTML = 'Booking: Trip to ' + data['location'] + ': ' + data['price'];
+        });
+
+        socket.on('trip_update', function(data) {
+            var price_div = document.getElementById('trip_price');
+            console.log(data)
+            // Update the quotation price on the page
+            price_div.innerHTML = 'Trip: Trip to ' + data['location'] + ': ' + data['price'];
         });
 
         // Send a request to the broker for a quotation from the Auldfella's Quotation Service
