@@ -9,6 +9,17 @@ This is a group project for COMP30220 Distributed Systems.
 * Python
 * Flask
 
+### Port Usage
+
+| Service           | Port Number   |
+| -------------     | ------------- |
+| Client            | 8000          |
+| Broker            | 5000          |
+| serviceKiwi       | 5001          |
+| serviceTrip       | 5002          |
+| serviceSkyscanner | 5003          |
+| serviceBooking    | 5004          |
+
 ## Getting Started
 
 ### Prerequisites
