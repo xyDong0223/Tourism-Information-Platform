@@ -11,14 +11,14 @@ This is a group project for COMP30220 Distributed Systems.
 
 ### Port Usage
 
-| Service           | Port Number   |
-| -------------     | ------------- |
-| Client            | 8000          |
-| Broker            | 5000          |
-| serviceKiwi       | 5001          |
-| serviceTrip       | 5002          |
-| serviceSkyscanner | 5003          |
-| serviceBooking    | 5004          |
+| Service           | Port Number |
+|-------------------|-------------|
+| client            | 5000        |
+| serviceKiwi       | 5001        |
+| serviceTrip       | 5002        |
+| serviceSkyscanner | 5003        |
+| serviceBooking    | 5004        |
+| broker            | 5005        |
 
 ## Getting Started
 

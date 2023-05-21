@@ -28,17 +28,32 @@
     </select>
     <br>
     <button id="get_quotation">Get Quotation</button>
-    <div id="quotation_price"></div>
+    <h2 id="get_description"></h2>
+    <div id="kiwi_price"></div>
+    <div id="booking_price"></div>
 
     <script>
-        var socket = io.connect('http://localhost:5002');
+        var socket = io.connect('http://localhost:5005');
 
-        // Listen for a response from the broker with the price of the quotation
-        socket.on('update_plan', function(data) {
-            var price_div = document.getElementById('quotation_price');
+        socket.on('booking_update', function(data) {
+            var price_div = document.getElementById('get_description');
             console.log(data)
             // Update the quotation price on the page
-            price_div.innerHTML = 'Price of quotation from ' + data['description'] + ': ' + data['price'];
+            price_div.innerHTML = 'Welcome to ' + data['location'] + ': <br> ' + data['description'];
+        });
+
+        socket.on('kiwi_update', function(data) {
+            var price_div = document.getElementById('kiwi_price');
+            console.log(data)
+            // Update the quotation price on the page
+            price_div.innerHTML = 'Kiwi: Trip to ' + data['location'] + ': ' + data['price'];
+        });
+
+        socket.on('booking_update', function(data) {
+            var price_div = document.getElementById('booking_price');
+            console.log(data)
+            // Update the quotation price on the page
+            price_div.innerHTML = 'Booking: Trip to ' + data['location'] + ': ' + data['price'];
         });
 
         // Send a request to the broker for a quotation from the Auldfella's Quotation Service
