@@ -34,19 +34,19 @@ pip install -r requirements.txt
 
 * Start service 1 Booking
     ```sh
-    python Service_Booking/app.py  
+    python serviceBooking/app.py  
     ```
 * Start service 2 Kiwi
     ```sh
-    python Service_Kiwi/app.py  
+    python serviceKiwi/app.py  
     ```
 * Start service 3 Skyscanner
     ```sh
-    python Service_Skyscanner/app.py  
+    python serviceSkyscanner/app.py  
     ```
 * Start service 4 Trip
     ```sh
-    python Service_Trip/app.py  
+    python serviceTrip/app.py  
     ```
 * Start broker
     ```sh
