@@ -30,6 +30,7 @@
     <button id="get_quotation">Get Quotation</button>
     <h2 id="get_description"></h2>
     <div id="kiwi_price"></div>
+    <div id="skyscanner_price"></div>
     <div id="booking_price"></div>
 
     <script>
@@ -47,6 +48,13 @@
             console.log(data)
             // Update the quotation price on the page
             price_div.innerHTML = 'Kiwi: Trip to ' + data['location'] + ': ' + data['price'];
+        });
+
+         socket.on('skyscanner_update', function(data) {
+            var price_div = document.getElementById('skyscanner_price');
+            console.log(data)
+            // Update the quotation price on the page
+            price_div.innerHTML = 'Skyscanner: Trip to ' + data['location'] + ': ' + data['price'];
         });
 
         socket.on('booking_update', function(data) {
