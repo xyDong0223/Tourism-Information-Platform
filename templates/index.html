@@ -3,73 +3,161 @@
 <head>
     <title>Client</title>
     <script src="../../static/js/socket.io.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        .each-service {
+          border: 1px solid black;
+          border-radius: 15px;
+          margin: 1rem 10%;
+          padding: 2rem 2rem;
+          text-align: center;
+        }
+        .service-logo {
+          display: inline-block;
+          vertical-align: middle;
+        }
+        .service-name {
+          display: inline-block;
+          vertical-align: middle;
+          font-size:20px;
+        }
+        .price {
+          display: inline-block;
+          margin-left:30%;
+          padding: 1rem;
+          vertical-align: middle;
+          font-size:25px;
+        }
+        div.hidden {
+           display: none
+        }
+        #get-city {
+            text-align: center;
+        }
+        #get-description {
+            text-align: center;
+            margin: 0 10%;
+        }
+        .quotation-panel-updated {
+            margin: auto;
+            text-align: center;
+            padding: 10px;
+        }
+        .quotation-panel-welcome-hide {
+            display: none;
+        }
+        .quotation-panel-init {
+            position: absolute;
+            margin: auto;
+            top: 40%;
+            left: 20%;
+            text-align: center;
+            font-size: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Client</h1>
-    <label for="start_date">Start Date:</label>
-    <input type="date" id="start_date">
-    <br>
-    <label for="end_date">End Date:</label>
-    <input type="date" id="end_date">
-    <br>
-    <label for="city">City:</label>
-    <select id="city">
-        {% for city in cities %}
-        <option value="{{ city }}">{{ city }}</option>
-        {% endfor %}
-        <!-- Add more cities as options here -->
-    </select>
-    <br>
-    <label for="travel_type">Travel Type:</label>
-    <select id="travel_type">
-        <option value="all inclusive">All inclusive</option>
-        <option value="semi inclusive">Semi inclusive</option>
-        <option value='only "transport and hotel\"'>Only transport and hotel</option>
-    </select>
-    <br>
-    <button id="get_quotation">Get Quotation</button>
-    <h2 id="get_description"></h2>
-    <div id="kiwi_price"></div>
-    <div id="skyscanner_price"></div>
-    <div id="booking_price"></div>
-    <div id="trip_price"></div>
+    <div id ="quotation-panel" class="quotation-panel-init">
+        <h2 id ="quotation-panel-welcome"> Welcome to the travel agency!</h2><br>
+        <label for="start_date">Start Date:</label>
+        <input type="date" id="start_date">
+        <label for="end_date">End Date:</label>
+        <input type="date" id="end_date">
+        <label for="city">City:</label>
+        <select id="city">
+            {% for city in cities %}
+            <option value="{{ city }}">{{ city }}</option>
+            {% endfor %}
+            <!-- Add more cities as options here -->
+        </select>
+        <label for="travel_type">Travel Type:</label>
+        <select id="travel_type">
+            <option value="all inclusive">All inclusive</option>
+            <option value="semi inclusive">Semi inclusive</option>
+            <option value='only "transport and hotel\"'>Only transport and hotel</option>
+        </select>
+        <button id="get_quotation">Get Quotation</button>
+    </div>
+
+    <h1 id="get-city"></h1>
+    <div id="get-description"></div>
+
+    <div class='each-service hidden' id="kiwi">
+        <div class='service-logo'>
+            <img src='https://www.kiwi.com/stories/wp-content/uploads/2021/02/web-png-kiwicom-icon-normal.png' style="width:60px;height:60px;">
+        </div>
+        <div class='service-name'>Kiwi.com</div>
+        <div class='price' id="kiwi_price"></div>
+    </div>
+
+    <div class='each-service hidden' id="skyscanner">
+        <div class='service-logo'>
+            <img src='https://www.skyscanner.com/images/opengraph_v1.png' style="width:60px;height:60px;">
+        </div>
+        <div class='service-name'>Skyscanner</div>
+        <div class='price' id="skyscanner_price"></div>
+    </div>
+
+    <div class='each-service hidden' id="trip">
+        <div class='service-logo'>
+            <img src='https://pbs.twimg.com/card_img/1659325804772294656/NaxU-UF-?format=png&name=900x900' style="width:60px;height:60px;">
+        </div>
+        <div class='service-name'>Trip.com</div>
+        <div class='price' id="trip_price"></div>
+    </div>
+
+    <div class='each-service hidden' id="booking">
+        <div class='service-logo'>
+            <img src='https://play-lh.googleusercontent.com/eJuvWSnbPwEWAQCYwl8i9nPJXRzTv94JSYGGrKIu0qeuG_5wgYtb982-2F_jOGtIytY=w240-h480-rw' style="width:60px;height:60px;">
+        </div>
+        <div class='service-name'>Booking.com</div>
+        <div class='price' id="booking_price"></div>
+    </div>
 
     <script>
         var socket = io.connect('http://localhost:5005');
 
         socket.on('booking_update', function(data) {
-            var price_div = document.getElementById('get_description');
+            var price_div = document.getElementById('get-city');
             console.log(data)
-            // Update the quotation price on the page
-            price_div.innerHTML = 'Welcome to ' + data['location'] + ': <br> ' + data['description'];
+            price_div.innerHTML = 'Trip to ' + data['location'];
+            document.getElementById('quotation-panel').classList.remove('quotation-panel-init');
+            document.getElementById('quotation-panel').classList.add('quotation-panel-updated');
+            document.getElementById('quotation-panel-welcome').classList.add('quotation-panel-welcome-hide');
+        });
+
+        socket.on('booking_update', function(data) {
+            var price_div = document.getElementById('get-description');
+            console.log(data)
+            price_div.innerHTML = data['description'];
         });
 
         socket.on('kiwi_update', function(data) {
             var price_div = document.getElementById('kiwi_price');
             console.log(data)
-            // Update the quotation price on the page
-            price_div.innerHTML = 'Kiwi: Trip to ' + data['location'] + ': ' + data['price'];
+            price_div.innerHTML = 'From ' + data['price'];
+            document.getElementById('kiwi').classList.remove('hidden');
         });
 
          socket.on('skyscanner_update', function(data) {
             var price_div = document.getElementById('skyscanner_price');
             console.log(data)
-            // Update the quotation price on the page
-            price_div.innerHTML = 'Skyscanner: Trip to ' + data['location'] + ': ' + data['price'];
+            price_div.innerHTML = 'From ' + data['price'];
+            document.getElementById('skyscanner').classList.remove('hidden');
         });
 
         socket.on('booking_update', function(data) {
             var price_div = document.getElementById('booking_price');
             console.log(data)
-            // Update the quotation price on the page
-            price_div.innerHTML = 'Booking: Trip to ' + data['location'] + ': ' + data['price'];
+            price_div.innerHTML = 'From ' + data['price'];
+            document.getElementById('booking').classList.remove('hidden');
         });
 
         socket.on('trip_update', function(data) {
             var price_div = document.getElementById('trip_price');
             console.log(data)
-            // Update the quotation price on the page
-            price_div.innerHTML = 'Trip: Trip to ' + data['location'] + ': ' + data['price'];
+            price_div.innerHTML = 'From ' + data['price'];
+            document.getElementById('trip').classList.remove('hidden');
         });
 
         // Send a request to the broker for a quotation from the Auldfella's Quotation Service
