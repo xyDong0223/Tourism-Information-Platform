@@ -17,7 +17,6 @@ sio_booking.connect('http://localhost:5004')
 def service_response(quotation):
     print(f"Received quotation: {quotation}")
     socket.emit('update_plan',quotation)
-    sio_booking.disconnect()
 
 
 
@@ -25,9 +24,10 @@ def service_response(quotation):
 
 @socket.on('get_input')
 def get_input(data):
-    print(f"Received quotation: {data}")
+    print(f"Send input: {data}")
 
     sio_booking.emit('calculate_service',data)
+
 
 
 
