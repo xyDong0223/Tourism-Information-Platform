@@ -51,7 +51,7 @@ sio_booking.connect('http://localhost:5004')
 @sio_booking.on('service_response')
 def service_response(quotation):
     print(f"Received quotation: {quotation}")
-    socket.emit('update_plan',quotation)
+    socket.emit('booking_update',quotation)
 
 
 @socket.on('get_input')

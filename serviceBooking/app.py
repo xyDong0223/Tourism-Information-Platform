@@ -74,11 +74,10 @@ def calculate_service(data):
     end_date = datetime.strptime(end_date, '%Y-%m-%d').date()
 
     print(start_date,end_date)
-    delta = start_date - end_date
+    delta = end_date - start_date
     days_between = delta.days
 
     plan = Plans.query.filter_by(location=city, plan_type=plan_type).first()
-    plans = Plans.query.all()
 
     total_price = calculate_price(plan.price,days_between)
 
