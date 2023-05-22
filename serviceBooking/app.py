@@ -31,23 +31,6 @@ with app.app_context():
 Migrate(app=app,db=db)
 
 
-# Define a function to generate a quotation
-def generate_quotation():
-    # Business logic for generating a quotation goes here
-    quotation = {
-        'id': 1,
-        'description': 'Trip\'s Quotation',
-        'price': 100.00
-    }
-    return quotation
-
-# Listen for a 'quotation' event and send back a quotation
-@socketio.on('quotation')
-def get_quotation():
-    quotation = generate_quotation()
-    print("receive the request from the broker")
-    emit('quotation_response', quotation)
-
 #calcuate the total price with discount
 def calculate_price(price, days):
     price = price * days
