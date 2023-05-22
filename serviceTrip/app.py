@@ -23,5 +23,16 @@ def get_quotation():
     print("receive the request from the broker")
     emit('quotation_response', quotation)
 
+@socketio.on('calculate_service')
+def calculate_service(data):
+    city = data["city"]
+    plan_response = {
+        'location': city,
+        'price': 100,
+    }
+    emit('service_response', plan_response)
+
+
+
 if __name__ == '__main__':
-    socketio.run(app, port=5003)
+    socketio.run(app, port=5002)
