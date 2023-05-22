@@ -7,14 +7,14 @@ CORS(app)
 socketio = SocketIO(app)
 
 # Define a function to generate a quotation
-def generate_quotation():
-    # Business logic for generating a quotation goes here
-    quotation = {
-        'id': 1,
-        'description': 'Service_Trip\'s Quotation',
-        'price': 33.00
-    }
-    return quotation
+# def generate_quotation():
+#     # Business logic for generating a quotation goes here
+#     quotation = {
+#         'id': 1,
+#         'description': 'Service_Trip\'s Quotation',
+#         'price': 33.00
+#     }
+#     return quotation
 
 # Listen for a 'quotation' event and send back a quotation
 @socketio.on('quotation')
