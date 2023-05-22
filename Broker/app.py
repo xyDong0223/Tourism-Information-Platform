@@ -18,7 +18,6 @@ sio_kiwi.connect('http://localhost:5001')
 def service_response(quotation):
     print(f"Received quotation: {quotation}")
     socket.emit('kiwi_update', quotation)
-    sio_kiwi.disconnect()
 
 # Trip
 sio_trip = socketio.Client()
