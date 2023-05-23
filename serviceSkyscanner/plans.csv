@@ -1,0 +1,67 @@
+city,average_price,description,plan_type
+Rome,92,"",all inclusive
+Rome,88,"",semi inclusive
+Rome,82,"",only transport and hotel
+Paris,92,"",all inclusive
+Paris,90,"",semi inclusive
+Paris,85,"",only "transport and hotel"
+Venice,95,"",all inclusive
+Venice,85,"",semi inclusive
+Venice,80,"",only "transport and hotel"
+Florence,90,"",all inclusive
+Florence,80,"",semi inclusive
+Florence,75,"",only "transport and hotel"
+Vienna,93,"",all inclusive
+Vienna,85,"",semi inclusive
+Vienna,80,"",only "transport and hotel"
+Prague,90,"",all inclusive
+Prague,80,"",semi inclusive
+Prague,77,"",only "transport and hotel"
+Dublin,100,"",all inclusive
+Dublin,90,"",semi inclusive
+Dublin,80,"",only "transport and hotel"
+Budapest,92,"",all inclusive
+Budapest,80,"",semi inclusive
+Budapest,75,"",only "transport and hotel"
+Krakow,90,"",all inclusive
+Krakow,80,"",semi inclusive
+Krakow,75,"",only "transport and hotel"
+Stockholm,95,"",all inclusive
+Stockholm,85,"",semi inclusive
+Stockholm,80,"",only "transport and hotel"
+Lisbon,98,"",all inclusive
+Lisbon,85,"",semi inclusive
+Lisbon,80,"",only "transport and hotel"
+Amsterdam,102,"",all inclusive
+Amsterdam,98,"",semi inclusive
+Amsterdam,90,"",only "transport and hotel"
+Madrid,95,"",all inclusive
+Madrid,85,"",semi inclusive
+Madrid,80,"",only "transport and hotel"
+Athens,95,"",all inclusive
+Athens,85,"",semi inclusive
+Athens,80,"",only "transport and hotel"
+Edinburgh,95,"",all inclusive
+Edinburgh,85,"",semi inclusive
+Edinburgh,80,"",only "transport and hotel"
+Copenhagen,110,"",all inclusive
+Copenhagen,90,"",semi inclusive
+Copenhagen,85,"",only "transport and hotel"
+Zurich,95,"",all inclusive
+Zurich,88,"",semi inclusive
+Zurich,80,"",only "transport and hotel"
+Oslo,95,"",all inclusive
+Oslo,85,"",semi inclusive
+Oslo,80,"",only "transport and hotel"
+Bergen,91,"",all inclusive
+Bergen,81,"",semi inclusive
+Bergen,79,"",only "transport and hotel"
+Seville,90,"",all inclusive
+Seville,83,"",semi inclusive
+Seville,80,"",only "transport and hotel"
+Helsinki,90,"",all inclusive
+Helsinki,80,"",semi inclusive
+Helsinki,75,"",only "transport and hotel"
+Dubrovnik,88,"",all inclusive
+Dubrovnik,84,"",semi inclusive
+Dubrovnik,82,"",only "transport and hotel"

@@ -19,6 +19,7 @@ def service_response(quotation):
     print(f"Received quotation: {quotation}")
     socket.emit('kiwi_update', quotation)
 
+
 # Trip
 sio_trip = socketio.Client()
 sio_trip.connect('http://localhost:5002')
@@ -34,11 +35,11 @@ def service_response(quotation):
 sio_skyscanner = socketio.Client()
 sio_skyscanner.connect('http://localhost:5003')
 
+# Listen for the 'service_response' from the service
 @sio_skyscanner.on('service_response')
 def service_response(quotation):
     print(f"Received quotation: {quotation}")
-    socket.emit('skyscanner_update', quotation)
-
+    socket.emit('skyscanner_update', quotation)  # send quotation to client
 
 
 # Booking
@@ -51,7 +52,7 @@ sio_booking.connect('http://localhost:5004')
 @sio_booking.on('service_response')
 def service_response(quotation):
     print(f"Received quotation: {quotation}")
-    socket.emit('booking_update',quotation)
+    socket.emit('booking_update', quotation)
 
 
 @socket.on('get_input')
