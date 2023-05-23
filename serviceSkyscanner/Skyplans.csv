@@ -1,67 +1,67 @@
 city,average_price,description,plan_type
-Rome,92,"",all inclusive
-Rome,88,"",semi inclusive
-Rome,82,"",only transport and hotel
-Paris,92,"",all inclusive
-Paris,90,"",semi inclusive
-Paris,85,"",only "transport and hotel"
-Venice,95,"",all inclusive
-Venice,85,"",semi inclusive
-Venice,80,"",only "transport and hotel"
-Florence,90,"",all inclusive
-Florence,80,"",semi inclusive
-Florence,75,"",only "transport and hotel"
-Vienna,93,"",all inclusive
-Vienna,85,"",semi inclusive
-Vienna,80,"",only "transport and hotel"
-Prague,90,"",all inclusive
-Prague,80,"",semi inclusive
-Prague,77,"",only "transport and hotel"
-Dublin,100,"",all inclusive
-Dublin,90,"",semi inclusive
-Dublin,80,"",only "transport and hotel"
-Budapest,92,"",all inclusive
-Budapest,80,"",semi inclusive
-Budapest,75,"",only "transport and hotel"
-Krakow,90,"",all inclusive
-Krakow,80,"",semi inclusive
-Krakow,75,"",only "transport and hotel"
-Stockholm,95,"",all inclusive
-Stockholm,85,"",semi inclusive
-Stockholm,80,"",only "transport and hotel"
-Lisbon,98,"",all inclusive
-Lisbon,85,"",semi inclusive
-Lisbon,80,"",only "transport and hotel"
-Amsterdam,102,"",all inclusive
-Amsterdam,98,"",semi inclusive
-Amsterdam,90,"",only "transport and hotel"
-Madrid,95,"",all inclusive
-Madrid,85,"",semi inclusive
-Madrid,80,"",only "transport and hotel"
-Athens,95,"",all inclusive
-Athens,85,"",semi inclusive
-Athens,80,"",only "transport and hotel"
-Edinburgh,95,"",all inclusive
-Edinburgh,85,"",semi inclusive
-Edinburgh,80,"",only "transport and hotel"
-Copenhagen,110,"",all inclusive
-Copenhagen,90,"",semi inclusive
-Copenhagen,85,"",only "transport and hotel"
-Zurich,95,"",all inclusive
-Zurich,88,"",semi inclusive
-Zurich,80,"",only "transport and hotel"
-Oslo,95,"",all inclusive
-Oslo,85,"",semi inclusive
-Oslo,80,"",only "transport and hotel"
-Bergen,91,"",all inclusive
-Bergen,81,"",semi inclusive
-Bergen,79,"",only "transport and hotel"
-Seville,90,"",all inclusive
-Seville,83,"",semi inclusive
-Seville,80,"",only "transport and hotel"
-Helsinki,90,"",all inclusive
-Helsinki,80,"",semi inclusive
-Helsinki,75,"",only "transport and hotel"
-Dubrovnik,88,"",all inclusive
-Dubrovnik,84,"",semi inclusive
-Dubrovnik,82,"",only "transport and hotel"
+Rome,100,"Uncover Rome's historic past with visits to iconic sites like the Colosseum, Roman Forum, and Vatican City.",all inclusive
+Rome,95,"Experience Rome's heritage with visits to the Colosseum, Roman Forum. Meals not included.",semi inclusive
+Rome,90,"Discover Rome's key sites including the Colosseum and Roman Forum. Accommodations and transportation provided, meals not included.",only "transport and hotel"
+Paris,100,"Revel in Paris's romance with landmarks such as the Eiffel Tower and Louvre Museum.",all inclusive
+Paris,95,"Explore Paris's charm visiting the Eiffel Tower and Louvre Museum. Meals not included.",semi inclusive
+Paris,90,"Discover Paris's iconic sites like the Eiffel Tower and Louvre. Accommodations and transportation provided, meals not included.",only "transport and hotel"
+Venice,100,"Admire Venice's unique beauty with its canals and St. Mark's Square.",all inclusive
+Venice,95,"Explore Venice's charm with sights like its canals. Meals not included.",semi inclusive
+Venice,90,"Discover Venice's picturesque canals and gondolas. Accommodations and transportation provided, meals not included.",only "transport and hotel"
+Florence,100,"Relish Florence's Renaissance legacy including the Duomo and Uffizi Gallery.",all inclusive
+Florence,95,"Experience Florence's art and architecture. Meals not included.",semi inclusive
+Florence,90,"Explore Florence's Renaissance beauty, including the Duomo. Accommodations and transportation provided, meals not included.",only "transport and hotel"
+Vienna,100,"Take in Vienna's elegance with the Schönbrunn Palace and the Vienna State Opera.",all inclusive
+Vienna,95,"Experience Vienna's grandeur visiting the Schönbrunn Palace. Meals not included.",semi inclusive
+Vienna,90,"Discover Vienna's charms including the Schönbrunn Palace. Accommodations and transportation provided, meals not included.",only "transport and hotel"
+Prague,100,"Explore Prague's magic with the Prague Castle and Charles Bridge.",all inclusive
+Prague,95,"Experience Prague's stunning architecture. Meals not included.",semi inclusive
+Prague,90,"Discover Prague's heritage with visits to Prague Castle. Accommodations and transportation provided, meals not included.",only "transport and hotel"
+Dublin,100,"Experience Dublin's vibrancy, lively pubs and Trinity College.",all inclusive
+Dublin,95,"Explore Dublin's lively culture and historic castles. Meals not included.",semi inclusive
+Dublin,90,"Discover Dublin's rich history including Trinity College. Accommodations and transportation provided, meals not included.",only "transport and hotel"
+Budapest,100,"Marvel at Budapest's grandeur with a visit to the Parliament Building and Buda Castle.",all inclusive
+Budapest,95,"Discover Budapest's stunning architecture, including the Parliament Building. Meals not included.",semi inclusive
+Budapest,90,"Explore Budapest's heritage sites including the Parliament Building. Accommodations and transportation provided, meals not included.",only "transport and hotel"
+Krakow,100,"Experience Krakow's rich history with a visit to Wawel Castle.",all inclusive
+Krakow,95,"Explore Krakow's medieval architecture and Jewish heritage. Meals not included.",semi inclusive
+Krakow,90,"Discover Krakow's well-preserved sites including Wawel Castle. Accommodations and transportation provided, meals not included.",only "transport and hotel"
+Stockholm,100,"Experience Stockholm's modern charm with visits to the Vasa Museum and Gamla Stan.",all inclusive
+Stockholm,95,"Explore Stockholm's trendy neighborhoods and rich history. Meals not included.",semi inclusive
+Stockholm,90,"Discover Stockholm's beauty, including the Vasa Museum. Accommodations and transportation provided, meals not included.",only "transport and hotel"
+Lisbon,100,"Experience Lisbon's vibrant culture with a visit to the iconic Belém Tower.",all inclusive
+Lisbon,95,"Discover Lisbon's colorful neighborhoods and historic landmarks. Meals not included.",semi inclusive
+Lisbon,90,"Explore Lisbon's charm including the iconic Belém Tower. Accommodations and transportation provided, meals not included.",only "transport and hotel"
+Amsterdam,100,"Delight in Amsterdam's charm with visits to the Anne Frank House and Jordaan neighborhood.",all inclusive
+Amsterdam,95,"Experience Amsterdam's historic architecture and world-class museums. Meals not included.",semi inclusive
+Amsterdam,90,"Discover Amsterdam's picturesque canals and vibrant Jordaan neighborhood. Accommodations and transportation provided, meals not included.",only "transport and hotel"
+Madrid,100,"Enjoy Madrid's lively atmosphere with a visit to the Prado Museum and Puerta del Sol.",all inclusive
+Madrid,95,"Explore Madrid's vibrant plazas and stunning art collections. Meals not included.",semi inclusive
+Madrid,90,"Discover Madrid's charm, including the Prado Museum. Accommodations and transportation provided, meals not included.",only "transport and hotel"
+Athens,100,"Immerse yourself in Athens's ancient history with a visit to the Acropolis and Parthenon.",all inclusive
+Athens,95,"Experience Athens's iconic landmarks and charming neighborhoods. Meals not included.",semi inclusive
+Athens,90,"Explore Athens's ancient sites including the Acropolis. Accommodations and transportation provided, meals not included.",only "transport and hotel"
+Edinburgh,100,"Experience Edinburgh's historic charm, including its stunning castle and famous Royal Mile.",all inclusive
+Edinburgh,95,"Discover Edinburgh's medieval Old Town and stunning castle. Meals not included.",semi inclusive
+Edinburgh,90,"Explore Edinburgh's charming streets and historic sites, including its famous Royal Mile. Accommodations and transportation provided, meals not included.",only "transport and hotel"
+Copenhagen,100,"Discover Copenhagen's vibrancy with visits to the Little Mermaid statue and colorful Nyhavn district.",all inclusive
+Copenhagen,95,"Explore Copenhagen's modern architecture and charming canals. Meals not included.",semi inclusive
+Copenhagen,90,"Experience Copenhagen's beauty, including its beautiful parks and Little Mermaid statue. Accommodations and transportation provided, meals not included.",only "transport and hotel"
+Zurich,100,"Experience Zurich's elegance with a stroll through its charming Old Town and upscale shopping areas.",all inclusive
+Zurich,95,"Discover Zurich's vibrant cultural scene and stunning lake. Meals not included.",semi inclusive
+Zurich,90,"Explore Zurich's charm, including its stunning lake and charming Old Town. Accommodations and transportation provided, meals not included.",only "transport and hotel"
+Oslo,100,"Explore Oslo's beauty with visits to the stunning Opera House and Holmenkollen Ski Jump.",all inclusive
+Oslo,95,"Experience Oslo's modern architecture and beautiful fjord. Meals not included.",semi inclusive
+Oslo,90,"Discover Oslo's rich Viking history and modern charm, including the stunning Opera House. Accommodations and transportation provided, meals not included.",only "transport and hotel"
+Bergen,100,"Discover Bergen's picturesque charm with a ride on the Fløibanen funicular for panoramic views.",all inclusive
+Bergen,95,"Explore Bergen's vibrant fish market and colorful wooden houses. Meals not included.",semi inclusive
+Bergen,90,"Experience Bergen's beauty, including its stunning fjords and colorful wooden houses. Accommodations and transportation provided, meals not included.",only "transport and hotel"
+Seville,100,"Experience Seville's vibrancy with visits to the Royal Alcázar and charming Santa Cruz neighborhood.",all inclusive
+Seville,95,"Explore Seville's stunning architecture and vibrant flamenco performances. Meals not included.",semi inclusive
+Seville,90,"Discover Seville's charm, including the Royal Alcázar and vibrant flamenco performances. Accommodations and transportation provided, meals not included.",only "transport and hotel"
+Helsinki,100,"Explore Helsinki's modern design and beautiful parks, including a visit to the iconic Helsinki Cathedral.",all inclusive
+Helsinki,95,"Experience Helsinki's fascinating Finnish culture and iconic Helsinki Cathedral. Meals not included.",semi inclusive
+Helsinki,90,"Discover Helsinki's charm, including its beautiful parks and iconic Helsinki Cathedral. Accommodations and transportation provided, meals not included.",only "transport and hotel"
+Dubrovnik,100,"Discover Dubrovnik's stunning views with visits to the ancient city walls and charming Old Town.",all inclusive
+Dubrovnik,95,"Explore Dubrovnik's picturesque Adriatic Sea views and Game of Thrones filming locations. Meals not included.",semi inclusive
+Dubrovnik,90,"Experience Dubrovnik's charm, including its ancient city walls and picturesque Adriatic Sea views. Accommodations and transportation provided, meals not included.",only "transport and hotel"
