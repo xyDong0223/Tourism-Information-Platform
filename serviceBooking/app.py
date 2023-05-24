@@ -6,12 +6,12 @@ from flask_cors import CORS
 from socketIO_client import SocketIO as ClientSocketIO
 from flask_sqlalchemy import SQLAlchemy
 
-# from Service_Booking.ext import db
-# from Service_Booking.models import Plans
-# from Service_Booking import settting
-from ext import db
-from models import Plans
-import settting
+from serviceBooking.ext import db
+from serviceBooking.models import Plans
+from serviceBooking import settting
+# from ext import db
+# from models import Plans
+# import settting
 from flask_migrate import Migrate
 
 import csv
@@ -19,7 +19,7 @@ import csv
 # Initialise the APP
 app = Flask(__name__)
 ## Set the configure of app
-app.config.from_object(settting.DevelopmentConfig)
+app.config.from_object(settting.ProducationConfig)
 CORS(app)
 socketio = SocketIO(app)
 #connect the db to the app
@@ -74,32 +74,9 @@ def calculate_service(data):
     emit('service_response', plan_response)
 
 
-
-
-
-
-
-
 @app.route('/')
 def upload_csv_to_database():
-    with open('plans.csv', 'r') as file:
-        csv_data = csv.reader(file)
-        next(csv_data)  # Skip the header row
-        for row in csv_data:
-            location = row[0]
-            price = float(row[1])
-            description = row[2]
-            plan_type = row[3]
-
-            # Create a new Plans object and assign the values from the CSV row
-            plan = Plans(location=location, price=price, description=description, plan_type=plan_type)
-
-            # Add the new object to the session
-            db.session.add(plan)
-
-    # Commit the changes to the database
-    db.session.commit()
-    return "hello world"
+    return "helloworld"
 
 if __name__ == '__main__':
-    socketio.run(app, port=5004)
+    socketio.run(app, port=5004,allow_unsafe_werkzeug=True)

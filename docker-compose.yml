@@ -1,0 +1,35 @@
+version: '3'
+services:
+  service-booking:
+    build:
+      context: ./serviceBooking
+    ports:
+      - 5004:5004
+    container_name: service-booking
+    networks:
+      - my-network
+
+  broker:
+    build:
+      context: ./Broker
+    ports:
+      - 5005:5005
+    container_name: broker
+    depends_on:
+      - service-booking
+    networks:
+      - my-network
+
+  client:
+    build:
+      context: ./Client
+    ports:
+      - 5000:5000
+    container_name: client
+    depends_on:
+      - broker
+    networks:
+      - my-network
+
+networks:
+  my-network:
