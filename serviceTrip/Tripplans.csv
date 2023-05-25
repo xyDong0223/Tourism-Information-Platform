@@ -1,7 +1,7 @@
 city,average_price,description,plan_type
 Rome,100,"Discover Rome's rich history, state-of-the-art architecture, and delicious cuisine.",all inclusive
 Rome,96,"Discover Rome's rich history, state-of-the-art architecture, and delicious cuisine. Meals not included.",semi inclusive
-Rome,90,"Discover Rome's rich history, state-of-the-art architecture, and delicious cuisine. Only accommodations and transportation provided.",only transport and hotel
+Rome,90,"Discover Rome's rich history, state-of-the-art architecture, and delicious cuisine. Only accommodations and transportation provided.","only ""transport and hotel"""
 Paris,104,Explore Paris's charm by visiting iconic landmarks such as the Eiffel Tower and Louvre Museum.,all inclusive
 Paris,100,Explore Paris's charm by visiting iconic landmarks such as the Eiffel Tower and Louvre Museum. Meals not included.,semi inclusive
 Paris,94,Explore Paris's charm by visiting iconic landmarks such as the Eiffel Tower and Louvre Museum. Only accommodations and transportation provided.,"only ""transport and hotel"""
