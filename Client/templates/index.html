@@ -169,6 +169,8 @@
 {#            <div class='service-name'>Booking.com</div>#}
             <div class='service-name display-start-date'></div> to
             <div class='service-name display-end-date'></div>
+            <div id='booking-promo-code'></div>
+
             <div class='price' id="booking_price"></div>
         </div>
     </div>
@@ -244,6 +246,28 @@
             console.log(data)
             price_div.innerHTML = 'From ' + data['price'];
             document.getElementById('booking').classList.remove('hidden');
+        });
+
+         socket.on('booking_update', function(data) {
+            var promo = document.getElementById('booking-promo-code');
+            {#promo_validation #}
+            {#-1: no code entered#}
+            {#0: invlid code#}
+            {#1: valid code#}
+            if(data['promo_validation'] === -1){
+                promo.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+                document.getElementById('booking-promo-code').classList.remove('promo-code-false');
+                document.getElementById('booking-promo-code').classList.remove('promo-code-true');
+                document.getElementById('booking-promo-code').classList.add('promo-code-empty');
+            } else if(data['promo_validation'] === 1){
+                promo.innerHTML = "Promo Code Applied";
+                document.getElementById('booking-promo-code').classList.remove('promo-code-false');
+                document.getElementById('booking-promo-code').classList.add('promo-code-true');
+            }else {
+                promo.innerHTML = "Invalid Promo Code";
+                document.getElementById('booking-promo-code').classList.remove('promo-code-true');
+                document.getElementById('booking-promo-code').classList.add('promo-code-false');
+            }
         });
 
         socket.on('trip_update', function(data) {

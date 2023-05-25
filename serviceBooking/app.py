@@ -64,11 +64,25 @@ def calculate_service(data):
 
     total_price = calculate_price(plan.price,days_between)
 
+    promotion_codes = {
+        "SUMMER2023": 0.8,
+        "TRAVELNOW": 0.75,
+        "GETAWAY25": 0.85,
+        "SAVEBIG10": 0.6,
+        "EXPLORE15": 0.65
+    }
+    promo_validation=0
+    if data['promo'].upper() in promotion_codes.keys():
+        promo_validation = 1
+        total_price *= promotion_codes[data['promo'].upper()]
+    elif data['promo'].upper() == "":
+        promo_validation = -1
+
     plan_response = {
         'location': plan.location,
-        'price': total_price,
-        'description': plan.description,
-        'plan_type':plan.plan_type
+        'price': round(total_price),
+        'promo_validation': promo_validation
+
     }
 
     emit('service_response', plan_response)

@@ -44,7 +44,7 @@ def service_response(quotation):
 
 # Booking
 sio_booking = socketio.Client()
-sio_booking.connect('http://service-booking:5004')
+sio_booking.connect('http://localhost:5004')
 
 
 # Define a function to handle the response from the Auldfella's Quotation Service
