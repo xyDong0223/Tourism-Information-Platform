@@ -19,7 +19,7 @@ with app.app_context():
 Migrate(app=app, db=db)
 
 
-def calculate_quotation(start_date, end_date, city, plan_type):
+def calculate_quotation(start_date, end_date, city, plan_type, promo_code):
     # Base prices for each city (replace with real prices)
     plan = Plans.query.filter_by(location=city, plan_type=plan_type).first()
 
@@ -30,12 +30,22 @@ def calculate_quotation(start_date, end_date, city, plan_type):
 
     # Calculate the number of days for the trip
     num_days = (end_date - start_date).days
-
     base_price = plan.price
     price = base_price * num_days
+    promo_validation = 0
+
+    if promo_code == '':
+        promo_validation = -1
+    elif promo_code == 'MEMBERSHIP':
+        promo_validation = 1
+        price *= 0.95
+
+    print(promo_validation)
+
+
 
     description = f"{plan_type.capitalize()} trip to {city} from {start_date.strftime('%Y-%m-%d')} to {end_date.strftime('%Y-%m-%d')}."
-    return {"location": city, "price": price, "description": description}
+    return {"location": city, "price": price, "description": plan.description, "promo_validation": promo_validation}
 
 
 @socket.on('calculate_service')
@@ -45,7 +55,8 @@ def get_input(data):
     end_date = data['end_date']
     city = data['city']
     plan_type = data['travel_type']
-    quotation = calculate_quotation(start_date, end_date, city, plan_type)
+    promo_code = data['promo'].upper()
+    quotation = calculate_quotation(start_date, end_date, city, plan_type, promo_code)
     socket.emit('service_response', quotation)
 
 
