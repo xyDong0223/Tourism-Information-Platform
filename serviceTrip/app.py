@@ -48,6 +48,7 @@ def calculate_service(data):
     end = data["end_date"]
     city = data["city"]
     type = data["travel_type"]
+    promo_validation = 0
 
     start = datetime.strptime(start, '%Y-%m-%d').date()
     end = datetime.strptime(end, '%Y-%m-%d').date()
@@ -67,11 +68,22 @@ def calculate_service(data):
     else:
         total_price = price
 
+    if data['promo'].upper() == '':
+        promo_validation = -1
+    elif data['promo'].upper() == 'STUDENT':
+        promo_validation = 1
+        total_price *= 0.95
+    elif data['promo'].upper() == 'FIRST15':
+        promo_validation = 1
+        total_price *= 0.85
+    print(promo_validation)
+
     plan_response = {
         'location': plan.location,
         'price':  round(total_price),
         'description': plan.description,
-        'plan_type': plan.plan_type
+        'plan_type': plan.plan_type,
+        'promo_validation': promo_validation
     }
     emit('service_response', plan_response)
 
