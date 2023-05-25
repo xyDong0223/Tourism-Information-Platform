@@ -33,7 +33,7 @@
         }
         .each-service .price {
           text-align: left;
-          margin-left:45%;
+          margin-left:15%;
           padding: 0 1rem;
           vertical-align: middle;
           font-size:25px;
@@ -74,6 +74,32 @@
             justify-content: center;
             align-items: center;
         }
+        .promo-code-true {
+            text-align: left;
+            margin-left:10%;
+            padding: 0.5% 1%;
+            vertical-align: middle;
+            font-size:15px;
+            background: springgreen;
+            border-radius: 10px;
+        }
+        .promo-code-false {
+            text-align: left;
+            margin-left:10%;
+            padding: 0.5% 1%;
+            vertical-align: middle;
+            font-size:15px;
+            background: crimson;
+            border-radius: 10px;
+        }
+        .promo-code-empty {
+            text-align: left;
+            margin-left:10%;
+            padding: 0.5% 1%;
+            vertical-align: middle;
+            font-size:15px;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
@@ -111,6 +137,7 @@
             </div>
             <div class='service-name display-start-date'></div> to
             <div class='service-name display-end-date'></div>
+            <div id='kiwi-promo-code'></div>
             <div class='price' id="kiwi_price"></div>
         </div>
 
@@ -182,6 +209,28 @@
             document.getElementById('kiwi').classList.remove('hidden');
         });
 
+        socket.on('kiwi_update', function(data) {
+            var promo = document.getElementById('kiwi-promo-code');
+            {#promo_validation #}
+            {#-1: no code entered#}
+            {#0: invlid code#}
+            {#1: valid code#}
+            if(data['promo_validation'] === -1){
+                promo.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+                document.getElementById('kiwi-promo-code').classList.remove('promo-code-false');
+                document.getElementById('kiwi-promo-code').classList.remove('promo-code-true');
+                document.getElementById('kiwi-promo-code').classList.add('promo-code-empty');
+            } else if(data['promo_validation'] === 1){
+                promo.innerHTML = "Promo Code Applied";
+                document.getElementById('kiwi-promo-code').classList.remove('promo-code-false');
+                document.getElementById('kiwi-promo-code').classList.add('promo-code-true');
+            }else {
+                promo.innerHTML = "Invalid Promo Code";
+                document.getElementById('kiwi-promo-code').classList.remove('promo-code-true');
+                document.getElementById('kiwi-promo-code').classList.add('promo-code-false');
+            }
+        });
+
          socket.on('skyscanner_update', function(data) {
             var price_div = document.getElementById('skyscanner_price');
             console.log(data)
@@ -209,12 +258,14 @@
             var end_date = document.getElementById('end_date').value;
             var city = document.getElementById('city').value;
             var travel_type = document.getElementById('travel_type').value;
+            var promo = document.getElementById('promo').value;
 
             var data = {
                 'start_date': start_date,
                 'end_date': end_date,
                 'city': city,
-                'travel_type': travel_type
+                'travel_type': travel_type,
+                'promo': promo
             };
 
             socket.emit('get_input',data);

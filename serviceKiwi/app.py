@@ -43,9 +43,18 @@ def calculate_service(data):
     elif total_price >= 30:
         total_price *= 0.8
 
+    promo_validation = 0
+    if data['promo'].upper() == '':
+        promo_validation = -1
+    elif data['promo'].upper() == 'STUDENT':
+        promo_validation = 1
+        total_price *= 0.9
+    print(promo_validation)
+
     plan_response = {
         'location': plan.location,
-        'price':  round(total_price)
+        'price':  round(total_price),
+        'promo_validation': promo_validation
     }
     emit('service_response', plan_response)
 
