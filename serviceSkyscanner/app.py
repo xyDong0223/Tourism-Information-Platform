@@ -53,17 +53,17 @@ def get_input(data):
 def upload_csv_to_database():
     try:
         plans_list = []
-        with open('plans.csv', 'r') as file:
+        with open('serviceSkyscanner/Skyplans.csv', 'r') as file:
             csv_data = csv.reader(file)
             next(csv_data)  # Skip the header row
             for row in csv_data:
                 location = row[0]
                 price = float(row[1])
                 description = row[2]
-                travel_type = row[3]
+                plan_type = row[3]
 
                 # Create a new Plans object and assign the values from the CSV row
-                plan = Plans(location=location, price=price, description=description, travel_type=travel_type)
+                plan = Plans(location=location, price=price, description=description, plan_type=plan_type)
                 plans_list.append(plan)
 
         if plans_list:
@@ -74,7 +74,7 @@ def upload_csv_to_database():
         return "Data uploaded successfully."
 
     except FileNotFoundError:
-        return "The file 'plans.csv' does not exist."
+        return "The file 'Skyplans.csv' does not exist."
 
     except Exception as e:
         # Log the error message for debugging purposes

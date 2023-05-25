@@ -1,0 +1,67 @@
+city,average_price,description,plan_type
+Rome,100,"Discover Rome's rich history, state-of-the-art architecture, and delicious cuisine.",all inclusive
+Rome,96,"Discover Rome's rich history, state-of-the-art architecture, and delicious cuisine. Meals not included.",semi inclusive
+Rome,90,"Discover Rome's rich history, state-of-the-art architecture, and delicious cuisine. Only accommodations and transportation provided.",only transport and hotel
+Paris,104,Explore Paris's charm by visiting iconic landmarks such as the Eiffel Tower and Louvre Museum.,all inclusive
+Paris,100,Explore Paris's charm by visiting iconic landmarks such as the Eiffel Tower and Louvre Museum. Meals not included.,semi inclusive
+Paris,94,Explore Paris's charm by visiting iconic landmarks such as the Eiffel Tower and Louvre Museum. Only accommodations and transportation provided.,"only ""transport and hotel"""
+Venice,97,"Experience the romantic atmosphere of Venice's canals, exquisite architecture, and delightful cuisine.",all inclusive
+Venice,87,"Experience the romantic atmosphere of Venice's canals, exquisite architecture, and delightful cuisine. Meals not included.",semi inclusive
+Venice,82,"Experience the romantic atmosphere of Venice's canals, exquisite architecture, and delightful cuisine. Only accommodations and transportation provided.","only ""transport and hotel"""
+Florence,92,"Immerse yourself in Florence's artistic treasures, Renaissance architecture, and delectable culinary delights.",all inclusive
+Florence,82,"Immerse yourself in Florence's artistic treasures, Renaissance architecture, and delectable culinary delights. Meals not included.",semi inclusive
+Florence,78,"Immerse yourself in Florence's artistic treasures, Renaissance architecture, and delectable culinary delights. Only accommodations and transportation provided.","only ""transport and hotel"""
+Vienna,95,"Discover Vienna's elegant culture, classical music heritage, and stunning imperial palaces.",all inclusive
+Vienna,87,"Discover Vienna's elegant culture, classical music heritage, and stunning imperial palaces. Meals not included.",semi inclusive
+Vienna,82,"Discover Vienna's elegant culture, classical music heritage, and stunning imperial palaces. Only accommodations and transportation provided.","only ""transport and hotel"""
+Prague,92,"Uncover the enchanting beauty of Prague's medieval architecture, charming streets, and lively beer scene.",all inclusive
+Prague,82,"Uncover the enchanting beauty of Prague's medieval architecture, charming streets, and lively beer scene. Meals not included.",semi inclusive
+Prague,79,"Uncover the enchanting beauty of Prague's medieval architecture, charming streets, and lively beer scene. Only accommodations and transportation provided.","only ""transport and hotel"""
+Dublin,102,"Experience the vibrant atmosphere of Dublin's pubs, traditional music, and rich Irish heritage.",all inclusive
+Dublin,92,"Experience the vibrant atmosphere of Dublin's pubs, traditional music, and rich Irish heritage. Meals not included.",semi inclusive
+Dublin,82,"Experience the vibrant atmosphere of Dublin's pubs, traditional music, and rich Irish heritage. Only accommodations and transportation provided.","only ""transport and hotel"""
+Budapest,94,"Immerse yourself in Budapest's stunning architecture, thermal baths, and vibrant nightlife.",all inclusive
+Budapest,82,"Immerse yourself in Budapest's stunning architecture, thermal baths, and vibrant nightlife. Meals not included.",semi inclusive
+Budapest,77,"Immerse yourself in Budapest's stunning architecture, thermal baths, and vibrant nightlife. Only accommodations and transportation provided.","only ""transport and hotel"""
+Krakow,92,"Discover Krakow's well-preserved medieval core, historic Old Town, and captivating charm.",all inclusive
+Krakow,82,"Discover Krakow's well-preserved medieval core, historic Old Town, and captivating charm. Meals not included.",semi inclusive
+Krakow,77,"Discover Krakow's well-preserved medieval core, historic Old Town, and captivating charm. Only accommodations and transportation provided.","only ""transport and hotel"""
+Stockholm,97,"Experience Stockholm's blend of modernity and natural beauty, with its stunning archipelago and innovative design.",all inclusive
+Stockholm,87,"Experience Stockholm's blend of modernity and natural beauty, with its stunning archipelago and innovative design. Meals not included.",semi inclusive
+Stockholm,82,"Experience Stockholm's blend of modernity and natural beauty, with its stunning archipelago and innovative design. Only accommodations and transportation provided.","only ""transport and hotel"""
+Lisbon,100,"Discover Lisbon's colorful streets, historic neighborhoods, and breathtaking views from its miradouros.",all inclusive
+Lisbon,86,"Discover Lisbon's colorful streets, historic neighborhoods, and breathtaking views from its miradouros. Meals not included.",semi inclusive
+Lisbon,82,"Discover Lisbon's colorful streets, historic neighborhoods, and breathtaking views from its miradouros. Only accommodations and transportation provided.","only ""transport and hotel"""
+Amsterdam,104,"Immerse yourself in Amsterdam's picturesque canals, world-class museums, and vibrant cycling culture.",all inclusive
+Amsterdam,100,"Immerse yourself in Amsterdam's picturesque canals, world-class museums, and vibrant cycling culture. Meals not included.",semi inclusive
+Amsterdam,92,"Immerse yourself in Amsterdam's picturesque canals, world-class museums, and vibrant cycling culture. Only accommodations and transportation provided.","only ""transport and hotel"""
+Madrid,97,"Experience Madrid's lively energy, grand boulevards, and rich history, including its famous art museums.",all inclusive
+Madrid,87,"Experience Madrid's lively energy, grand boulevards, and rich history, including its famous art museums. Meals not included.",semi inclusive
+Madrid,82,"Experience Madrid's lively energy, grand boulevards, and rich history, including its famous art museums. Only accommodations and transportation provided.","only ""transport and hotel"""
+Athens,97,"Explore Athens' ancient wonders, including the iconic Acropolis, archaeological sites, and vibrant Greek culture.",all inclusive
+Athens,87,"Explore Athens' ancient wonders, including the iconic Acropolis, archaeological sites, and vibrant Greek culture. Meals not included.",semi inclusive
+Athens,82,"Explore Athens' ancient wonders, including the iconic Acropolis, archaeological sites, and vibrant Greek culture. Only accommodations and transportation provided.","only ""transport and hotel"""
+Edinburgh,97,"Discover Edinburgh's rich history, medieval streets, and world-famous festivals, such as the Edinburgh Festival Fringe.",all inclusive
+Edinburgh,87,"Discover Edinburgh's rich history, medieval streets, and world-famous festivals, such as the Edinburgh Festival Fringe. Meals not included.",semi inclusive
+Edinburgh,82,"Discover Edinburgh's rich history, medieval streets, and world-famous festivals, such as the Edinburgh Festival Fringe. Only accommodations and transportation provided.","only ""transport and hotel"""
+Copenhagen,112,"Experience Copenhagen's modern design, picturesque waterfront, and cultural treasures, such as the iconic Nyhavn district.",all inclusive
+Copenhagen,92,"Experience Copenhagen's modern design, picturesque waterfront, and cultural treasures, such as the iconic Nyhavn district. Meals not included.",semi inclusive
+Copenhagen,86,"Experience Copenhagen's modern design, picturesque waterfront, and cultural treasures, such as the iconic Nyhavn district. Only accommodations and transportation provided.","only ""transport and hotel"""
+Zurich,97,"Explore Zurich's picturesque setting, thriving financial center, and vibrant cultural scene.",all inclusive
+Zurich,90,"Explore Zurich's picturesque setting, thriving financial center, and vibrant cultural scene. Meals not included.",semi inclusive
+Zurich,82,"Explore Zurich's picturesque setting, thriving financial center, and vibrant cultural scene. Only accommodations and transportation provided.","only ""transport and hotel"""
+Oslo,97,"Discover Oslo's blend of nature and urban life, with its stunning fjords, modern architecture, and rich Viking history.",all inclusive
+Oslo,87,"Discover Oslo's blend of nature and urban life, with its stunning fjords, modern architecture, and rich Viking history. Meals not included.",semi inclusive
+Oslo,82,"Discover Oslo's blend of nature and urban life, with its stunning fjords, modern architecture, and rich Viking history. Only accommodations and transportation provided.","only ""transport and hotel"""
+Bergen,93,"Experience Bergen's scenic beauty, with its colorful wooden houses, majestic fjords, and vibrant cultural scene.",all inclusive
+Bergen,83,"Experience Bergen's scenic beauty, with its colorful wooden houses, majestic fjords, and vibrant cultural scene. Meals not included.",semi inclusive
+Bergen,81,"Experience Bergen's scenic beauty, with its colorful wooden houses, majestic fjords, and vibrant cultural scene. Only accommodations and transportation provided.","only ""transport and hotel"""
+Seville,92,"Immerse yourself in Seville's rich history, flamenco music, and stunning Moorish architecture.",all inclusive
+Seville,85,"Immerse yourself in Seville's rich history, flamenco music, and stunning Moorish architecture. Meals not included.",semi inclusive
+Seville,82,"Immerse yourself in Seville's rich history, flamenco music, and stunning Moorish architecture. Only accommodations and transportation provided.","only ""transport and hotel"""
+Helsinki,92,"Discover Helsinki's modern design, beautiful waterfront, and vibrant cultural scene.",all inclusive
+Helsinki,82,"Discover Helsinki's modern design, beautiful waterfront, and vibrant cultural scene. Meals not included.",semi inclusive
+Helsinki,78,"Discover Helsinki's modern design, beautiful waterfront, and vibrant cultural scene. Only accommodations and transportation provided.","only ""transport and hotel"""
+Dubrovnik,90,"Experience Dubrovnik's stunning coastal views, medieval city walls, and charming old town.",all inclusive
+Dubrovnik,86,"Experience Dubrovnik's stunning coastal views, medieval city walls, and charming old town. Meals not included.",semi inclusive
+Dubrovnik,82,"Experience Dubrovnik's stunning coastal views, medieval city walls, and charming old town. Only accommodations and transportation provided.","only ""transport and hotel"""

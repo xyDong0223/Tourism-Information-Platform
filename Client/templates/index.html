@@ -10,8 +10,8 @@
           align-items: center;
           border: 1px solid black;
           border-radius: 15px;
-          margin: 1rem 10%;
-          padding: 2rem 2rem;
+          margin: 0.5rem 10%;
+          padding: 0 2rem;
           width: 60%;
           justify-content: space-between;
           text-align: center;
@@ -19,17 +19,22 @@
         .each-service .service-logo {
           text-align: center;
           vertical-align: middle;
-          padding: 2rem 2rem;
+          padding: 1rem 1rem;
         }
-        .each-service .service-name {
+        .each-service .service-name #display-start-date {
+          text-align: center;
+          vertical-align: middle;
+          font-size:20px;
+        }
+        .each-service .service-name #display-end-date {
           text-align: center;
           vertical-align: middle;
           font-size:20px;
         }
         .each-service .price {
-          text-align: right;
-          margin-left:45%;
-          padding: 1rem;
+          text-align: left;
+          margin-left:15%;
+          padding: 0 1rem;
           vertical-align: middle;
           font-size:25px;
         }
@@ -42,6 +47,7 @@
         #get-description {
             text-align: center;
             margin: 0 10%;
+            padding-bottom: 1rem;
         }
         .quotation-panel-updated {
             margin: auto;
@@ -54,13 +60,12 @@
         .quotation-panel-init {
             position: absolute;
             margin: auto;
-            top: 40%;
-            left: 20%;
+            top: 35%;
+            left: 10%;
             text-align: center;
             font-size: 20px;
         }
         .quotation-panel-title {
-            color: #006900;
             font-size: 40px;
         }
         .service-container {
@@ -68,6 +73,32 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+        }
+        .promo-code-true {
+            text-align: left;
+            margin-left:10%;
+            padding: 0.5% 1%;
+            vertical-align: middle;
+            font-size:15px;
+            background: springgreen;
+            border-radius: 10px;
+        }
+        .promo-code-false {
+            text-align: left;
+            margin-left:10%;
+            padding: 0.5% 1%;
+            vertical-align: middle;
+            font-size:15px;
+            background: crimson;
+            border-radius: 10px;
+        }
+        .promo-code-empty {
+            text-align: left;
+            margin-left:10%;
+            padding: 0.5% 1%;
+            vertical-align: middle;
+            font-size:15px;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -91,6 +122,8 @@
             <option value="semi inclusive">Semi inclusive</option>
             <option value='only "transport and hotel"'>Only transport and hotel</option>
         </select>
+        <label for="promo">Promo Code:</label>
+        <input type="text" id="promo" name="promo"><br><br>
         <button id="get_quotation">Get Quotation</button>
     </div>
 
@@ -102,7 +135,9 @@
             <div class='service-logo'>
                 <img src='https://www.kiwi.com/stories/wp-content/uploads/2021/02/web-png-kiwicom-icon-normal.png' style="width:60px;height:60px;">
             </div>
-            <div class='service-name'>Kiwi.com</div>
+            <div class='service-name display-start-date'></div> to
+            <div class='service-name display-end-date'></div>
+            <div id='kiwi-promo-code'></div>
             <div class='price' id="kiwi_price"></div>
         </div>
 
@@ -110,7 +145,9 @@
             <div class='service-logo'>
                 <img src='https://www.skyscanner.com/images/opengraph_v1.png' style="width:60px;height:60px;">
             </div>
-            <div class='service-name'>Skyscanner</div>
+{#            <div class='service-name'>Skyscanner</div>#}
+            <div class='service-name display-start-date'></div> to
+            <div class='service-name display-end-date'></div>
             <div class='price' id="skyscanner_price"></div>
         </div>
 
@@ -118,7 +155,10 @@
             <div class='service-logo'>
                 <img src='https://pbs.twimg.com/card_img/1659325804772294656/NaxU-UF-?format=png&name=900x900' style="width:60px;height:60px;">
             </div>
-            <div class='service-name'>Trip.com</div>
+{#            <div class='service-name'>Trip.com</div>#}
+            <div class='service-name display-start-date'></div> to
+            <div class='service-name display-end-date'></div>
+            <div id='trip-promo-code'></div>
             <div class='price' id="trip_price"></div>
         </div>
 
@@ -126,12 +166,26 @@
             <div class='service-logo'>
                 <img src='https://play-lh.googleusercontent.com/eJuvWSnbPwEWAQCYwl8i9nPJXRzTv94JSYGGrKIu0qeuG_5wgYtb982-2F_jOGtIytY=w240-h480-rw' style="width:60px;height:60px;">
             </div>
-            <div class='service-name'>Booking.com</div>
+{#            <div class='service-name'>Booking.com</div>#}
+            <div class='service-name display-start-date'></div> to
+            <div class='service-name display-end-date'></div>
             <div class='price' id="booking_price"></div>
         </div>
     </div>
 
     <script>
+        document.getElementById("start_date").addEventListener("change", function() {
+            for (let i = 0; i < 4; i++) {
+              document.getElementsByClassName('display-start-date')[i].innerHTML = this.value.toString();
+            }
+        });
+        document.getElementById("end_date").addEventListener("change", function() {
+            for (let i = 0; i < 4; i++) {
+                document.getElementsByClassName('display-end-date')[i].innerHTML = this.value.toString();
+            }
+        });
+
+
         var socket = io.connect('http://localhost:5005');
 
         socket.on('booking_update', function(data) {
@@ -156,6 +210,28 @@
             document.getElementById('kiwi').classList.remove('hidden');
         });
 
+        socket.on('kiwi_update', function(data) {
+            var promo = document.getElementById('kiwi-promo-code');
+            {#promo_validation #}
+            {#-1: no code entered#}
+            {#0: invlid code#}
+            {#1: valid code#}
+            if(data['promo_validation'] === -1){
+                promo.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+                document.getElementById('kiwi-promo-code').classList.remove('promo-code-false');
+                document.getElementById('kiwi-promo-code').classList.remove('promo-code-true');
+                document.getElementById('kiwi-promo-code').classList.add('promo-code-empty');
+            } else if(data['promo_validation'] === 1){
+                promo.innerHTML = "Promo Code Applied";
+                document.getElementById('kiwi-promo-code').classList.remove('promo-code-false');
+                document.getElementById('kiwi-promo-code').classList.add('promo-code-true');
+            }else {
+                promo.innerHTML = "Invalid Promo Code";
+                document.getElementById('kiwi-promo-code').classList.remove('promo-code-true');
+                document.getElementById('kiwi-promo-code').classList.add('promo-code-false');
+            }
+        });
+
          socket.on('skyscanner_update', function(data) {
             var price_div = document.getElementById('skyscanner_price');
             console.log(data)
@@ -177,18 +253,42 @@
             document.getElementById('trip').classList.remove('hidden');
         });
 
+        socket.on('trip_update', function(data) {
+            var promo = document.getElementById('trip-promo-code');
+            {#promo_validation #}
+            {#-1: no code entered#}
+            {#0: invlid code#}
+            {#1: valid code#}
+            if(data['promo_validation'] === -1){
+                promo.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+                document.getElementById('trip-promo-code').classList.remove('promo-code-false');
+                document.getElementById('trip-promo-code').classList.remove('promo-code-true');
+                document.getElementById('trip-promo-code').classList.add('promo-code-empty');
+            } else if(data['promo_validation'] === 1){
+                promo.innerHTML = "Promo Code Applied";
+                document.getElementById('trip-promo-code').classList.remove('promo-code-false');
+                document.getElementById('trip-promo-code').classList.add('promo-code-true');
+            }else {
+                promo.innerHTML = "Invalid Promo Code";
+                document.getElementById('trip-promo-code').classList.remove('promo-code-true');
+                document.getElementById('trip-promo-code').classList.add('promo-code-false');
+            }
+        });
+
         // Send a request to the broker for a quotation from the Auldfella's Quotation Service
         document.getElementById('get_quotation').onclick = function() {
             var start_date = document.getElementById('start_date').value;
             var end_date = document.getElementById('end_date').value;
             var city = document.getElementById('city').value;
             var travel_type = document.getElementById('travel_type').value;
+            var promo = document.getElementById('promo').value;
 
             var data = {
                 'start_date': start_date,
                 'end_date': end_date,
                 'city': city,
-                'travel_type': travel_type
+                'travel_type': travel_type,
+                'promo': promo
             };
 
             socket.emit('get_input',data);
