@@ -200,12 +200,6 @@
             document.getElementById('quotation-panel-welcome').classList.add('quotation-panel-welcome-hide');
         });
 
-        socket.on('booking_update', function(data) {
-            var price_div = document.getElementById('get-description');
-            console.log(data)
-            price_div.innerHTML = data['description'];
-        });
-
         socket.on('kiwi_update', function(data) {
             var price_div = document.getElementById('kiwi_price');
             console.log(data)
@@ -297,6 +291,12 @@
             console.log(data)
             price_div.innerHTML = 'From ' + data['price'];
             document.getElementById('trip').classList.remove('hidden');
+        });
+
+        socket.on('trip_update', function(data) {
+            var price_div = document.getElementById('get-description');
+            console.log(data)
+            price_div.innerHTML = data['description'];
         });
 
         socket.on('trip_update', function(data) {

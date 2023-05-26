@@ -82,7 +82,6 @@ def calculate_service(data):
         'location': plan.location,
         'price':  round(total_price),
         'description': plan.description,
-        'plan_type': plan.plan_type,
         'promo_validation': promo_validation
     }
     emit('service_response', plan_response)
