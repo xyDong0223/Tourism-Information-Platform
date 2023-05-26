@@ -192,6 +192,12 @@
         var socket = io.connect('http://localhost:5005');
 
         socket.on('booking_update', function(data) {
+            var price_div = document.getElementById('get-description');
+            console.log(data)
+            price_div.innerHTML = data['description'];
+        });
+
+        socket.on('booking_update', function(data) {
             var price_div = document.getElementById('get-city');
             console.log(data)
             price_div.innerHTML = 'Trip to ' + data['location'];
@@ -293,11 +299,6 @@
             document.getElementById('trip').classList.remove('hidden');
         });
 
-        socket.on('trip_update', function(data) {
-            var price_div = document.getElementById('get-description');
-            console.log(data)
-            price_div.innerHTML = data['description'];
-        });
 
         socket.on('trip_update', function(data) {
             var promo = document.getElementById('trip-promo-code');
