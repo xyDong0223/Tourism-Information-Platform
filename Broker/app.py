@@ -11,7 +11,7 @@ socket = SocketIO(app, cors_allowed_origins='http://127.0.0.1:5000', async_mode=
 
 # Kiwi
 sio_kiwi = socketio.Client()
-sio_kiwi.connect('http://localhost:5001')
+sio_kiwi.connect('http://service-kiwi:5001')
 
 
 @sio_kiwi.on('service_response')
@@ -22,7 +22,7 @@ def service_response(quotation):
 
 # Trip
 sio_trip = socketio.Client()
-sio_trip.connect('http://localhost:5002')
+sio_trip.connect('http://service-trip:5002')
 
 
 @sio_trip.on('service_response')
@@ -33,7 +33,7 @@ def service_response(quotation):
 
 # Skyscanner
 sio_skyscanner = socketio.Client()
-sio_skyscanner.connect('http://localhost:5003')
+sio_skyscanner.connect('http://service-skyscanner:5003')
 
 # Listen for the 'service_response' from the service
 @sio_skyscanner.on('service_response')
@@ -44,7 +44,7 @@ def service_response(quotation):
 
 # Booking
 sio_booking = socketio.Client()
-sio_booking.connect('http://localhost:5004')
+sio_booking.connect('http://service-booking:5004')
 
 
 # Define a function to handle the response from the Auldfella's Quotation Service

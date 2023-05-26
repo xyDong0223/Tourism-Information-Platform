@@ -1,4 +1,4 @@
-from ext import db
+from serviceSkyscanner.ext import db
 
 #create a table for flights
 class Plans(db.Model):

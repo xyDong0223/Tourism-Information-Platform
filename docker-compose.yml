@@ -9,6 +9,33 @@ services:
     networks:
       - my-network
 
+  service-kiwi:
+    build:
+      context: ./serviceKiwi
+    ports:
+      - 5001:5001
+    container_name: service-kiwi
+    networks:
+      - my-network
+
+  service-skyscanner:
+    build:
+      context: ./serviceSkyscanner
+    ports:
+      - 5003:5003
+    container_name: service-skyscanner
+    networks:
+      - my-network
+
+  service-trip:
+    build:
+      context: ./serviceTrip
+    ports:
+      - 5002:5002
+    container_name: service-trip
+    networks:
+      - my-network
+
   broker:
     build:
       context: ./Broker
@@ -17,6 +44,9 @@ services:
     container_name: broker
     depends_on:
       - service-booking
+      - service-kiwi
+      - service-skyscanner
+      - service-trip
     networks:
       - my-network
 

@@ -1,8 +1,8 @@
-from ext import db
+from serviceSkyscanner.ext import db
 import csv
-import setting
+from serviceSkyscanner import setting
 from datetime import datetime
-from models import Plans
+from serviceSkyscanner.models import Plans
 from flask_migrate import Migrate
 from flask import Flask, jsonify, render_template
 from flask_socketio import SocketIO, emit
@@ -95,4 +95,4 @@ def upload_csv_to_database():
 
 
 if __name__ == '__main__':
-    socket.run(app, port=5003)
+    socket.run(app, port=5003, allow_unsafe_werkzeug=True)

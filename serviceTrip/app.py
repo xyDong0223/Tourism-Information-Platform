@@ -3,14 +3,14 @@ import csv
 from flask import Flask, jsonify, render_template
 from flask_migrate import Migrate
 
-from ext import db
+from serviceTrip.ext import db
 from flask_socketio import SocketIO, emit
 from datetime import datetime
 from flask_cors import CORS
 from socketIO_client import SocketIO as ClientSocketIO
 
-import setting
-from models import Plans
+from serviceTrip import setting
+from serviceTrip.models import Plans
 
 app = Flask(__name__)
 CORS(app)
@@ -110,4 +110,4 @@ def upload_csv_to_database():
 
 
 if __name__ == '__main__':
-    socketio.run(app, port=5002)
+    socketio.run(app, port=5002, allow_unsafe_werkzeug=True)

@@ -3,14 +3,14 @@ import csv
 from flask import Flask, jsonify, render_template
 from flask_migrate import Migrate
 
-from ext import db
+from serviceKiwi.ext import db
 from flask_socketio import SocketIO, emit
 from datetime import datetime
 from flask_cors import CORS
 from socketIO_client import SocketIO as ClientSocketIO
 
-import setting
-from models import Plans
+from serviceKiwi import setting
+from serviceKiwi.models import Plans
 
 app = Flask(__name__)
 CORS(app)
@@ -60,4 +60,4 @@ def calculate_service(data):
 
 
 if __name__ == '__main__':
-    socketio.run(app, port=5001)
+    socketio.run(app, port=5001,allow_unsafe_werkzeug=True)

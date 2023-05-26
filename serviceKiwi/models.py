@@ -1,4 +1,4 @@
-from ext import db
+from serviceKiwi.ext import db
 
 class Plans(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)

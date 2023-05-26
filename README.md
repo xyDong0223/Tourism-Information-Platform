@@ -30,23 +30,35 @@ This is an example of how to list things you need to use the software and how to
 pip install -r requirements.txt
 ```
 
-### Usage
+### Run in Local
 
 * Start service 1 Booking
+     ```sh
+    cd serviceBooking 
+    ```
     ```sh
-    python serviceBooking/app.py  
+    flask run --port=5004
     ```
 * Start service 2 Kiwi
+     ```sh
+    cd serviceKiwi 
+    ```
     ```sh
-    python serviceKiwi/app.py  
+    flask run --port=5001
     ```
 * Start service 3 Skyscanner
+     ```sh
+    cd serviceSkyscanner 
+    ```
     ```sh
-    python serviceSkyscanner/app.py  
+    flask run --port=5003
     ```
 * Start service 4 Trip
+      ```sh
+    cd serviceTrip
+    ```
     ```sh
-    python serviceTrip/app.py  
+    flask run --port=5002
     ```
 * Start broker
     ```sh
@@ -57,6 +69,24 @@ pip install -r requirements.txt
     python app.py
     ```
 Visit http://127.0.0.1:5000 for the website.
+
+## Containerisation
+
+* Run the docker compose up
+    ```sh
+    docker compose up
+    ```
+
+There are 6 containern running
+1. service-booking
+2. service-kiwi
+3. service-trip
+4. service-skyscanner
+5. broker
+6. client
+
+Visit http://127.0.0.1:5000 for the website.
+
 
 
 ## Contact

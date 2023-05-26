@@ -1,4 +1,4 @@
-from ext import db
+from serviceTrip.ext import db
 
 
 # create a table for flights
