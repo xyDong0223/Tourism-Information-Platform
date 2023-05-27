@@ -177,11 +177,18 @@
     </div>
 
     <script>
+
+         document.getElementById("start_date").addEventListener("change", function() {
+            var startDate = document.getElementById("start_date").value;
+            document.getElementById("end_date").min = startDate;
+        });
+
         document.getElementById("start_date").addEventListener("change", function() {
             for (let i = 0; i < 4; i++) {
               document.getElementsByClassName('display-start-date')[i].innerHTML = this.value.toString();
             }
         });
+
         document.getElementById("end_date").addEventListener("change", function() {
             for (let i = 0; i < 4; i++) {
                 document.getElementsByClassName('display-end-date')[i].innerHTML = this.value.toString();
