@@ -3,6 +3,8 @@
 ## Description
 This is a group project for COMP30220 Distributed Systems.
 
+Link to the video showcasing the project: https://youtu.be/dEv5yp5S_SU
+
 
 ### Built With
 
