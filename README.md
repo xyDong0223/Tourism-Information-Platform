@@ -12,6 +12,13 @@ Link to the video showcasing the project: https://youtu.be/dEv5yp5S_SU
 
 * Python
 * Flask
+* Websockets
+* SQLite
+* HTML
+* CSS
+* SQLAlchemy
+* Javascript
+* Docker
 
 ### Port Usage
 
@@ -34,47 +41,7 @@ This is an example of how to list things you need to use the software and how to
 pip install -r requirements.txt
 ```
 
-### Run in Local
-
-* Start service 1 Booking
-     ```sh
-    cd serviceBooking 
-    ```
-    ```sh
-    flask run --port=5004
-    ```
-* Start service 2 Kiwi
-     ```sh
-    cd serviceKiwi 
-    ```
-    ```sh
-    flask run --port=5001
-    ```
-* Start service 3 Skyscanner
-     ```sh
-    cd serviceSkyscanner 
-    ```
-    ```sh
-    flask run --port=5003
-    ```
-* Start service 4 Trip
-      ```sh
-    cd serviceTrip
-    ```
-    ```sh
-    flask run --port=5002
-    ```
-* Start broker
-    ```sh
-    python broker/app.py
-    ```
-* Start client
-    ```sh
-    python app.py
-    ```
-Visit http://127.0.0.1:5000 for the website.
-
-## Containerisation
+### Containerisation
 
 * Run the docker compose up
     ```sh
