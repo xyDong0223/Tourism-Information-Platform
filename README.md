@@ -1,7 +1,7 @@
 # TeamNotFound
 
 ## Description
-
+This is a group project. 
 Link to the video showcasing the project: https://youtu.be/dEv5yp5S_SU
 
 
@@ -59,5 +59,10 @@ Visit http://127.0.0.1:5000 for the website.
 
 ## Contact
 
-Xinyu Dong - [@xyDong0223](https://gitlab.com/xyDong0223) - xydong@bu.edu
+Xinyu Dong  - xydong@bu.edu
 
+Nan Wu - nan.wu1@ucdconnect.ie
+
+Yiming Zhao - yiming.zhao2@ucdconnect.ie
+
+Weijiong You - weijiong.you@ucdconnect.ie
